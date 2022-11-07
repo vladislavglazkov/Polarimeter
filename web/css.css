@@ -1,0 +1,58 @@
+.board{
+    border: 2px solid;
+    border-radius: 7%;
+    background-color: azure;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+.boardHeader{
+    height: 100px;
+    text-align: center;
+    display: flex;
+    font-size: large;
+}
+.text{
+    margin: auto;
+
+}
+.panel{
+    display: flex;
+}
+.generalWrap{
+    display: flex;
+    padding-inline:10%;
+}
+.panelEntry{
+    height: 40px;
+    width: 100%;
+    display: flex;
+    border-top: 1px;
+    border-bottom: 1px;
+    border-style: solid;
+
+}
+.panelEntryText{
+    width: 50%;
+    font-size: medium;
+    height: 100%;
+
+}
+.panelEntryInput{
+    width: 50%;
+    height: 100%;
+    padding: 5px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.panelEntryInputField{
+    height: 100%;
+    background-color: white;
+}
+
+.sample{
+    width: 400px;
+    height: 300px;
+
+}

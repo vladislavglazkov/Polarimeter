@@ -1,0 +1,233 @@
+.board{
+    border: 2px solid;
+    border-radius: 20px;
+    background-color: azure;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    padding-block: 5px;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 5px grey;
+    user-select: none;
+    position: relative;
+    margin: auto;
+}
+.boardHeader{
+    height: 100px;
+    text-align: center;
+    display: flex;
+    font-size: xx-large;
+}
+.text{
+    margin: auto;
+    text-align: center;
+    /* box-sizing: border-box; */
+}
+.generalWrap{
+    display: flex;
+    flex-direction: column;
+    padding-inline:10%;
+}
+.panel{
+    display: flex;
+    flex-direction: column;
+    /* font-size: x-large; */
+}
+.panelEntry{
+    height: 40px;
+    width: 100%;
+    display: flex;
+    /* border-top: 1px; */
+    /* border-bottom: 1px; */
+    box-sizing: border-box;
+    border-bottom: dashed 1px;
+    border-inline: none;
+    padding: 4px;
+}
+.panelEntry:last-child{
+    border: none;;
+}
+.panelEntryText{
+    width: 50%;
+    font-size: medium;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-shrink: 0;
+}
+.panelEntryInput{
+    /* width: 50%; */
+    /* height: 100%; */
+    /* padding: 5px; */
+    display: flex;
+    flex-direction: row-reverse;
+    border-radius: 7px;
+    min-width: 0;
+    flex-shrink: 1;
+    max-width: 100px;
+}
+.panelEntryInputField{
+    border-radius: 7px;
+    height: 100%;
+    background-color: white;
+    width: 200px;
+    margin: auto;
+    padding: 3px;
+    box-sizing: border-box;
+}
+.flexEmpty{
+    width: 20%;
+    flex-shrink: 0;
+}
+
+.sample{
+    width: 400px;
+    /* height: 300px; */
+}
+
+.btn{
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    margin: auto;
+}
+.btnIn.active{
+    background-color: cadetblue;
+}
+.btnIn{
+    background-color: rgb(136, 136, 136);
+    font-size: x-large;
+    font-weight: bold;
+    color: cornsilk;
+    border-radius: 10px;
+    display: flex;
+    height: 100%;
+    transition: transform 200ms ease-in-out;
+    padding-block: 4px;
+    box-sizing: border-box;
+    user-select:none;
+}
+.btnIn.active:hover{
+    transform: scale(1.03);
+    transition: transform 200ms ease-in-out;
+}
+
+.boardButtons{
+    width: 100%;
+    height: 70px;
+    padding: 5px;
+    display: flex;
+    box-sizing: border-box;
+}
+.blurred{
+    height: 100%;
+    width: 100%;
+    /* top: 2%; */
+    /* left: 2%; */
+    top: 0;
+    left: 0;
+    position: absolute;
+    pointer-events: none;
+    border-radius: 15px;
+    box-sizing: content-box;
+}
+.blurred.active{
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    pointer-events: all;
+}
+.conn{
+    height: 100px;
+    font-size: xx-large;
+    width: 100%;
+    padding: 4px;
+    display: flex;
+    background-color: azure;
+    box-shadow: 2px 2px 5px grey;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+.outputParam{
+    display: flex;
+    height: 30px;
+    flex-direction: row;   
+}
+.outputParam:not(:first-child){
+    border-top: dashed 0.5px grey;
+}
+.outputParam:not(:last-child){
+    border-bottom: dashed 0.5px grey;
+}
+.copyright{
+    background-color: lightgray;
+    font-size: large;
+    margin-bottom: 20px;
+}
+
+.outputInner{
+    width: 50%;
+    padding: 2px;
+    display: flex;
+}
+.outputInner:not(:first-child){
+    border-left: solid 0.5px grey;
+}
+.outputInner:not(:last-child){
+    border-right: solid 0.5px grey;
+}
+
+.rotationMain{
+    height: 400px;
+    width: 400px;
+    position: relative;
+}
+.rotBtn{
+    /* height: 80px; */
+    width: 100%;
+}
+.rotBottom{
+    display: flex;
+    width: 100%;
+    /* height: 60px; */
+    padding: 3px;
+}
+
+.main{
+    min-height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* position: absolute; */
+    box-sizing: border-box;
+}
+.downpart{
+    box-sizing: border-box;
+    height: 20%;
+    width: 100%;
+    flex-shrink: 0;
+    font-size:xx-large;
+    padding-block: 5px;
+    padding-inline: 10px;
+    user-select: all;
+    /* line-height: 10; */
+    /* min-height: 1.25em; */
+    display: flex;
+    margin: 0;
+    justify-content: stretch;
+}
+.statusText{
+    border-radius: 10px;
+    background-color: white;
+    padding: 5px;
+    border: solid 1px;
+}
+.downButtonWrap{
+    flex-shrink: 0;
+    display: flex;
+    width: 150px;
+}
+.brd2{
+    padding-inline: 10px;
+}

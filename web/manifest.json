@@ -1,0 +1,16 @@
+{
+    "name": "Polarimeter",
+    "short_name": "Polarimeter",
+    "start_url": "portComm.html",
+    "display": "standalone",
+    "background_color": "#fdfdfd",
+    "theme_color": "#db4938",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+          "src": "icon.png",
+          "sizes": "200x200",
+          "type": "image/png"
+        }
+      ]
+  }
