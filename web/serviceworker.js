@@ -1,45 +1,38 @@
-let swVersion="1.0.0";
+let swVersion="2.0.0";
 let online=false;
-window.addEventListener('offline', () => {
-  online=false;
-});
-
-window.addEventListener('online', () => {
-  online=true;
-});
 
 
 self.addEventListener("activate",(event)=>{
   event.waitUntil(async ()=>{
     let keys=await caches.keys();
-    keys.forEach(element=>{
-      if (swVersion!=element){
-        await caches.delete(element);
-      }
-    })
+    for (let i=0;i<keys.length;i++){
+      await caches.delete(keys[i]);
+    }
+
   })
 })
 
 
 self.addEventListener("fetch", fetchEvent => {
   
-    if (!navigator.onLine){
+    
     fetchEvent.respondWith(
       caches.match(fetchEvent.request).then(res => {
         return res || fetch(fetchEvent.request)
       })
     )
-    }
-    else{
+    
+    /*else{
       console.log("online");
       fetchEvent.respondWith(fetch(fetchEvent.request));
-    }
+    }*/
   })
 
  
   const assets = [
+    "/",
     "/manifest.json",
-    "/portComm.html",
+    "/index.html",
     "https://unpkg.com/react@18/umd/react.development.js",
     "https://unpkg.com/react-dom@18/umd/react-dom.development.js",
     "https://unpkg.com/@babel/standalone/babel.min.js",

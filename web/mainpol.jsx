@@ -89,7 +89,7 @@ navigator.serial.addEventListener('connect',ndev)
                         <div className="copyright">&copy;2022 Vladislav Glazkov </div>
                         <div className="generalWrap">
                     <Connectivity status={this.state.connected} onClick={this.conn.bind(this)}></Connectivity>
-                    {this.state.connected==undefined?null:<div>
+                    {this.state.connected==false?null:<div>
                     <ConnectButton name="Connect"> </ConnectButton>
                     <br/>
                     
@@ -751,76 +751,8 @@ navigator.serial.addEventListener('connect',ndev)
             render(){
                 return(
                     <div className="main">
-                    <button onClick={this.series.bind(this)}>Conduct Experiment</button>
-                    <button onClick={this.flow.bind(this)}>Start Main Flow</button>
-                    <button onClick={async ()=>{
-
-                        await Comms.SendInfo("setprm 3 1 5");
-                        let pr=new Promise(resolve=>{
-                            setTimeout(()=>{resolve()},3000);
-                        });
-                        await pr;
-                        console.log("inbound");
-                        await Comms.SendInfo("getprm");
-                        let res=await Comms.Read();
-                        console.log(res);
-                    }}>TTS</button>
-
-
-
-<button onClick={async ()=>{
-
-while (true){
-    Comms.SendInfo("operation 10");
-    let res=await Comms.Read(res);
-    console.log(res);
-}
-console.log(res);
-}}>TTS2</button>
-<button onClick={async ()=>{
-    await this.measureMW(1);
-}}>MANNWITNEY</button>-->
-<button onClick={async ()=>{
-    
-    while (true){
-        
-        //await delay(500);
-        let rnd=Math.floor(Math.random()*20-10);
-        console.log("OPS AT "+rnd);
-        await this.GoTo(rnd);
-        await delay(500);
-        if (Math.random()<0.5){
-            let r1=await this.measureMW(1);
-            if (globalres[rnd]==undefined){
-                globalres[rnd]={}
-            }
-            if (globalres[rnd][r1]==undefined){
-                globalres[rnd][r1]=1;
-            }
-            else{
-                globalres[rnd][r1]++;
-            }
-        }
-        else{
-            let r1=await this.measureMW(-1);
-            if (globalres[rnd-1]==undefined){
-                globalres[rnd-1]={}
-            }
-            if (globalres[rnd-1][-r1]==undefined){
-                globalres[rnd-1][-r1]=1;
-            }
-            else{
-                globalres[rnd-1][-r1]++;
-            }
-        }
-    }
-}}>OPS</button>
-                    <div id="intext"></div>
                     
-                    <div className="sample" >
-                        <GeneralInformation inactive={this.state.ongoing}></GeneralInformation> 
-                        <RotationInfo FindCoarse={this.FindCoarse.bind(this)} exp={this.flow.bind(this,true)} inactive={this.state.ongoing}></RotationInfo>   
-                    </div>
+
                     <OutputTable ref={(rf)=>{this.otRef=rf;}}></OutputTable>
                     <div className="btnWrap">
                         <Button onClick={async ()=>{
